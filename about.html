@@ -83,6 +83,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- NAVIGATION BAR -->
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -106,16 +107,18 @@
         © 2025 Master Azerbaijani
     </footer>
 
+    <!-- Auto-highlight current nav item (works on all pages) -->
     <script>
-    // Auto-highlight current nav item
     (function() {
         var links = document.querySelectorAll('nav a');
         var current = window.location.pathname.split('/').pop();
-        if (!current) current = 'index.html';
+
+        // Treat root or empty as home
+        if (!current || current === '' || current === '/') current = 'index.html';
 
         links.forEach(function(link) {
             var href = link.getAttribute('href').split('#')[0].split('?')[0];
-            if (href === current) {
+            if ((current === 'index.html' && (href === 'index.html' || href === '/')) || href === current) {
                 link.classList.add('active');
                 link.setAttribute('aria-current','page');
             }
