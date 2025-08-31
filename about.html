@@ -6,7 +6,6 @@
 <title>About - Master Azerbaijani</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
@@ -15,7 +14,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,12 +21,10 @@ body {
     text-align: center;
     flex: 1;
 }
-
 nav {
     text-align: center;
     margin-bottom: 40px;
 }
-
 nav a {
     text-decoration: none;
     color: white;
@@ -39,49 +35,41 @@ nav a {
     border-radius: 8px;
     transition: transform 0.3s ease, text-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
-
 nav a:hover {
     transform: scale(1.1);
     text-shadow: 0 0 10px rgba(255,255,255,0.7);
     background: rgba(255,255,255,0.12);
 }
-
 nav a.active {
     transform: scale(1.15);
     color: #ffeb3b;
     background: rgba(255,255,255,0.18);
     text-shadow: 0 0 12px rgba(255,235,59,0.9);
 }
-
 nav a.active:hover {
     transform: scale(1.2);
 }
-
 h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
-
 p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 20px;
 }
-
 .contact {
     margin-top: 30px;
     font-size: 0.9rem;
     opacity: 0.9;
 }
-
 .contact a {
     color: #ffeb3b;
     text-decoration: none;
     word-break: break-all;
 }
-
 @media(max-width:480px) {
     h1 { font-size:2rem; }
     p { font-size:1rem; }
@@ -98,37 +86,29 @@ p {
         <a href="help.html">Help</a>
         <a href="coming-soon.html">App Coming Soon</a>
     </nav>
-
     <h1>About Master Azerbaijani</h1>
     <p>Welcome! Master Azerbaijani is designed to help families and heritage learners connect with their roots. Our goal is to provide interactive lessons, native audio pronunciation, and cultural context that goes beyond just words.</p>
     <p>Whether you’re living abroad or just starting your journey, this platform makes it easy to learn and practice Azerbaijani at your own pace. Built with love and understanding for busy people who want to connect with their heritage.</p>
-
     <div class="contact">
         Questions? Ideas? Just want to chat?<br />
         <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
     </div>
 </div>
-
 <!-- Auto-highlight current nav item -->
 <script>
 (function() {
   var links = document.querySelectorAll('nav a');
-  var currentPage = window.location.pathname.split('/').pop().toLowerCase();
-
-  // Treat root as "index.html"
-  if (!currentPage || currentPage === '' || currentPage === '/') {
-    currentPage = 'index.html';
-  }
-
+  var currentUrl = window.location.href.toLowerCase();
   links.forEach(function(link) {
     var href = link.getAttribute('href').toLowerCase();
-    if (href === currentPage) {
+    // Highlight if the current full URL contains the link's href
+    if (currentUrl.indexOf(href) !== -1) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
   });
 })();
 </script>
-
+</script>
 </body>
 </html>
