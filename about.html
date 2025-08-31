@@ -113,7 +113,7 @@ footer {
 (function() {
   var links = document.querySelectorAll('nav a');
   var current = window.location.pathname.split('/').pop().toLowerCase();
-  if (!current || current === '') current = 'index.html';
+  if (!current || current === '') current = 'about.html';
 
   links.forEach(function(link) {
     var href = link.getAttribute('href').split('#')[0].split('?')[0].toLowerCase();
