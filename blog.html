@@ -24,7 +24,7 @@
 
         .container {
             text-align: center;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 90%;
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -77,18 +77,14 @@
         }
 
         .post-list a {
-            color: #ffeb3b; /* yellow like other links */
+            color: #ffeb3b;
             text-decoration: none;
         }
 
-        .post-list a:hover {
-            text-decoration: underline;
-        }
-
-        .coming-soon {
-            opacity: 0.7;         /* slightly dimmed to indicate inactive */
-            pointer-events: none;  /* temporarily disables click */
-            cursor: not-allowed;   /* shows it’s not clickable */
+        .post-list a.coming-soon {
+            opacity: 0.7;
+            pointer-events: none;
+            cursor: not-allowed;
         }
 
         @media (max-width: 480px) {
@@ -109,9 +105,10 @@
         <nav>
             <a href="index.html">Home</a> |
             <a href="about.html">About</a> |
-            <a href="help.html">Help</a> |
+            <a href="blog.html">Blog</a> |
             <a href="contact.html">Contact</a> |
-            <a href="blog.html">Blog</a>
+            <a href="help.html">Help</a> |
+            <a href="coming-soon.html">Coming Soon</a>
         </nav>
 
         <h1>Blog</h1>

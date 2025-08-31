@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Master Azerbaijani - Home</title>
+    <title>Master Azerbaijani - Coming Soon</title>
     <style>
         * {
             margin: 0;
@@ -68,7 +68,20 @@
             opacity: 0.9;
         }
 
-        .features, .latest-posts {
+        .launch-date {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .email-signup {
+            margin-bottom: 30px;
+        }
+
+        .features {
             text-align: left;
             margin: 30px 0;
             background: rgba(255, 255, 255, 0.25);
@@ -76,18 +89,17 @@
             border-radius: 10px;
         }
 
-        .features h3, .latest-posts h3 {
+        .features h3 {
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
 
-        .features ul, .latest-posts ul {
+        .features ul {
             list-style: none;
-            padding-left: 0;
         }
 
-        .features li, .latest-posts li {
+        .features li {
             padding: 8px 0;
             padding-left: 30px;
             position: relative;
@@ -101,25 +113,6 @@
             font-weight: bold;
             font-size: 1.2rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        }
-
-        .latest-posts li:before {
-            content: "★";
-            position: absolute;
-            left: 0;
-            color: #ffeb3b;
-            font-size: 1.2rem;
-        }
-
-        .latest-posts a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-
-        .latest-posts a.coming-soon {
-            opacity: 0.7;
-            pointer-events: none;
-            cursor: not-allowed;
         }
 
         .contact {
@@ -138,11 +131,17 @@
             h1 {
                 font-size: 2rem;
             }
+
             .subtitle {
                 font-size: 1.2rem;
             }
-            .features li, .latest-posts li {
-                padding-left: 20px;
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                min-width: auto;
             }
         }
     </style>
@@ -166,8 +165,25 @@
 
         <p class="subtitle">Connect with your heritage. Bridge generations. Build belonging.</p>
 
+        <div class="launch-date">
+            <strong>🌾 Launching Novruz 2026</strong><br />
+            <em>March 20, 2026 - A perfect time for new beginnings</em>
+        </div>
+
+        <div class="email-signup">
+            <p style="margin-bottom: 15px; font-size: 1.1rem;">Be the first to know when we launch:</p>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSchAl_aV-b9vF2ah5HPzdfD8OiWQ-J4uwtu_VLt7WfP_tGR3A/viewform?embedded=true"
+                width="100%"
+                height="601"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+            >Loading…</iframe>
+        </div>
+
         <div class="features">
-            <h3>Features Coming Soon:</h3>
+            <h3>What's Coming:</h3>
             <ul>
                 <li>Interactive lessons for families and heritage learners</li>
                 <li>Audio pronunciation with native speaker guidance</li>
@@ -175,15 +191,6 @@
                 <li>Designed for busy people living abroad</li>
                 <li>Perfect for connecting with grandparents and in-laws</li>
                 <li>Built by someone who understands the struggle</li>
-            </ul>
-        </div>
-
-        <div class="latest-posts">
-            <h3>Latest Posts & Word of the Day:</h3>
-            <ul>
-                <li><a href="#" class="coming-soon">Word of the Day: Salam (Coming Soon)</a></li>
-                <li><a href="#" class="coming-soon">Blog Post 1: 5 Common Greetings (Coming Soon)</a></li>
-                <li><a href="#" class="coming-soon">Short Video: Numbers 1-10 (Coming Soon)</a></li>
             </ul>
         </div>
 
