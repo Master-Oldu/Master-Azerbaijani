@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Master Azerbaijani - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .flag {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .launch-date {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .email-signup {
+            margin-bottom: 30px;
+        }
+
+        .features {
+            text-align: left;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .features h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ffeb3b;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .contact {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .contact a {
+            color: #ffeb3b;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NAVIGATION BAR -->
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="help.html">Help</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="blog.html">Blog</a>
+        </nav>
+
+        <div class="flag">🇦🇿</div>
+
+        <h1>Master Azerbaijani</h1>
+
+        <p class="subtitle">Connect with your heritage. Bridge generations. Build belonging.</p>
+
+        <div class="launch-date">
+            <strong>🌱 Launching Novruz 2026</strong><br />
+            <em>March 20, 2026 - A perfect time for new beginnings</em>
+        </div>
+
+        <div class="email-signup">
+            <p style="margin-bottom: 15px; font-size: 1.1rem;">Be the first to know when we launch:</p>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSchAl_aV-b9vF2ah5HPzdfD8OiWQ-J4uwtu_VLt7WfP_tGR3A/viewform?embedded=true"
+                width="100%"
+                height="601"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                >Loading…</iframe
+            >
+        </div>
+
+        <div class="features">
+            <h3>What's Coming:</h3>
+            <ul>
+                <li>Interactive lessons for families and heritage learners</li>
+                <li>Audio pronunciation with native speaker guidance</li>
+                <li>Cultural context that goes beyond just words</li>
+                <li>Designed for busy people living abroad</li>
+                <li>Perfect for connecting with grandparents and in-laws</li>
+                <li>Built by someone who understands the struggle</li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            Questions? Ideas? Just want to chat?<br />
+            <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
+        </div>
+    </div>
+</body>
+</html>
