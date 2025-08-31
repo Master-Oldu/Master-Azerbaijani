@@ -112,28 +112,20 @@ p {
 <!-- Auto-highlight current nav item -->
 <script>
 (function() {
-    var links = document.querySelectorAll('nav a');
-    var current = window.location.pathname.split('/').pop().toLowerCase();
+  var links = document.querySelectorAll('nav a');
+  var currentUrl = window.location.href.toLowerCase();
 
-    // Default to home if root
-    if (!current || current === '' || current === '/') {
-        current = 'index.html';
+  links.forEach(function(link) {
+    var href = link.getAttribute('href').toLowerCase();
+
+    // Highlight if the current full URL contains the link's href
+    if (currentUrl.indexOf(href) !== -1) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
-
-    links.forEach(function(link) {
-        var href = link.getAttribute('href').split('#')[0].split('?')[0].toLowerCase();
-
-        // Treat both '/' and 'index.html' as home
-        if (
-            (current === 'index.html' && (href === 'index.html' || href === '/')) ||
-            current === href ||
-            (current === 'about' && href === 'about.html') // Allow /about without .html
-        ) {
-            link.classList.add('active');
-            link.setAttribute('aria-current','page');
-        }
-    });
+  });
 })();
+</script>
 </script>
 </body>
 </html>
