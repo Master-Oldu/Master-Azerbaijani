@@ -127,7 +127,7 @@ p {
         if (
             (current === 'index.html' && (href === 'index.html' || href === '/')) ||
             current === href ||
-            (current === 'about' && href === 'about.html')  // Allow /about with no .html
+            (current === 'about' && href === 'about.html') // Allow /about without .html
         ) {
             link.classList.add('active');
             link.setAttribute('aria-current','page');
