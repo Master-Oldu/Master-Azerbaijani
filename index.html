@@ -244,18 +244,21 @@
     </footer>
 
     <!-- Auto-highlight current nav item -->
-    <script>
-        (function() {
-            var links = document.querySelectorAll('nav a');
-            var current = window.location.pathname.split('/').pop() || 'index.html';
-            links.forEach(function(link) {
-                var href = link.getAttribute('href').split('#')[0].split('?')[0];
-                if (href === current) {
-                    link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
-                }
-            });
-        })();
-    </script>
+<script>
+    (function() {
+        var links = document.querySelectorAll('nav a');
+        var current = window.location.pathname.split('/').pop();
+        if (!current || current === '') {
+            current = 'index.html'; // Treat root as index.html
+        }
+        links.forEach(function(link) {
+            var href = link.getAttribute('href').split('#')[0].split('?')[0];
+            if (href === current) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+    })();
+</script>
 </body>
 </html>
