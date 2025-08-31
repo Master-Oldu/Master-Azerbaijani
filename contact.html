@@ -19,11 +19,13 @@
             align-items: center;
             justify-content: center;
             color: white;
+            padding: 20px; /* prevents content from touching edges on very small screens */
         }
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 1000px; /* allows container to grow on large screens */
+            width: 90%;         /* responsive width */
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -67,7 +69,7 @@
         }
 
         .contact a {
-            color: #ffeb3b;
+            color: #ffeb3b; /* yellow like homepage and other pages */
             text-decoration: none;
             word-break: break-all;
         }
@@ -98,7 +100,7 @@
         <h1>Contact Us</h1>
         <p>We’d love to hear from you! Whether you have suggestions, questions, or just want to say hello, feel free to reach out.</p>
         <p>Email us directly at:</p>
-        <p><a href="mailto:contact@masterazerbaijani.com">contact@masterazerbaijani.com</a></p>
+        <p class="contact"><a href="mailto:contact@masterazerbaijani.com">contact@masterazerbaijani.com</a></p>
 
         <div class="contact">
             We’ll do our best to respond promptly. Your thoughts and feedback help us make Master Azerbaijani better for everyone!

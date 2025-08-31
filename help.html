@@ -19,11 +19,13 @@
             align-items: center;
             justify-content: center;
             color: white;
+            padding: 20px; /* prevents content from touching edges on very small screens */
         }
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 1000px; /* allows container to grow on large screens */
+            width: 90%;         /* responsive width */
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -67,7 +69,7 @@
         }
 
         .contact a {
-            color: #ffeb3b;
+            color: #ffeb3b; /* yellow like homepage */
             text-decoration: none;
             word-break: break-all;
         }
@@ -98,7 +100,7 @@
         <h1>Help & Support</h1>
         <p>If you have questions, technical issues, or need assistance with Master Azerbaijani, we’re here to help. Check below for guidance or send us an email directly.</p>
         <p>For all inquiries, please email us at:</p>
-        <p><a href="mailto:help@masterazerbaijani.com">help@masterazerbaijani.com</a></p>
+        <p class="contact"><a href="mailto:help@masterazerbaijani.com">help@masterazerbaijani.com</a></p>
 
         <div class="contact">
             We aim to respond as quickly as possible to all inquiries. Your feedback and questions are important to us!

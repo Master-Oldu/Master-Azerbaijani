@@ -19,11 +19,13 @@
             align-items: center;
             justify-content: center;
             color: white;
+            padding: 20px;
         }
 
         .container {
             text-align: center;
-            max-width: 700px;
+            max-width: 1000px;
+            width: 90%;
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -54,6 +56,12 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
         .post-list {
             text-align: left;
             margin-top: 30px;
@@ -69,12 +77,18 @@
         }
 
         .post-list a {
-            color: #ffeb3b;
+            color: #ffeb3b; /* yellow like other links */
             text-decoration: none;
         }
 
         .post-list a:hover {
             text-decoration: underline;
+        }
+
+        .coming-soon {
+            opacity: 0.7;         /* slightly dimmed to indicate inactive */
+            pointer-events: none;  /* temporarily disables click */
+            cursor: not-allowed;   /* shows it’s not clickable */
         }
 
         @media (max-width: 480px) {
@@ -105,10 +119,9 @@
 
         <div class="post-list">
             <ul>
-                <li><a href="#">Post 1: Getting Started with Azerbaijani</a></li>
-                <li><a href="#">Post 2: 5 Common Phrases for Travelers</a></li>
-                <li><a href="#">Post 3: Connecting with Your Heritage</a></li>
-                <!-- Add more posts here -->
+                <li><a href="#" class="coming-soon">Post 1: Getting Started with Azerbaijani (Coming Soon)</a></li>
+                <li><a href="#" class="coming-soon">Post 2: 5 Common Phrases for Travelers (Coming Soon)</a></li>
+                <li><a href="#" class="coming-soon">Post 3: Connecting with Your Heritage (Coming Soon)</a></li>
             </ul>
         </div>
     </div>
