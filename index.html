@@ -1,202 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Master Azerbaijani - Home</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Master Azerbaijani - Home</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+        min-height:100vh; color:#fff; padding:20px;
+    }
+    nav {
+        text-align:center; margin-bottom:30px;
+    }
+    nav a {
+        color:#fff; text-decoration:none; margin:0 10px; font-weight:600;
+    }
+    nav a:hover { text-decoration:underline; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-            min-height: 100vh;
-            color: white;
-            padding: 20px;
-        }
+    .container { max-width:1200px; margin:auto; }
 
-        .container {
-            max-width: 1200px;
-            width: 90%;
-            margin: auto;
-        }
+    .hero {
+        text-align:center; padding:60px 20px; background:rgba(255,255,255,0.1);
+        border-radius:20px; backdrop-filter:blur(10px); margin-bottom:40px;
+        box-shadow:0 8px 32px rgba(0,0,0,0.1);
+    }
+    .hero h1 { font-size:3rem; margin-bottom:20px; font-weight:700; text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+    .hero p { font-size:1.5rem; opacity:0.9; }
 
-        nav {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    .grid {
+        display:grid; gap:20px; justify-content:center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-bottom:40px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 600;
-        }
+    .card {
+        background:rgba(255,255,255,0.1); padding:20px; border-radius:15px;
+        text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .card h3 { margin-bottom:15px; font-size:1.3rem; }
+    .card p { font-size:1rem; opacity:0.9; }
+    .card a { color:#ffeb3b; text-decoration:none; }
+    .card a.coming-soon { opacity:0.7; pointer-events:none; cursor:not-allowed; }
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            margin-bottom: 40px;
-        }
+    .social-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+    .social-card {
+        display:flex; flex-direction:column; align-items:center;
+        background:rgba(255,255,255,0.1); padding:15px; border-radius:15px;
+        width:120px; box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    }
+    .social-card svg { width:40px; height:40px; margin-bottom:10px; fill:#ffeb3b; }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+    .contact { text-align:center; font-size:0.9rem; opacity:0.8; margin-top:40px; }
+    .contact a { color:#ffeb3b; text-decoration:none; word-break:break-all; }
 
-        .hero p {
-            font-size: 1.4rem;
-            line-height: 1.5;
-            opacity: 0.9;
-        }
-
-        .grid-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.15);
-            padding: 20px;
-            border-radius: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .social-icons span {
-            margin: 0 6px;
-            font-size: 1.4rem;
-        }
-
-        .coming-soon {
-            opacity: 0.7;
-            pointer-events: none;
-            cursor: not-allowed;
-        }
-
-        .contact {
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .contact a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .card h3 {
-                font-size: 1.2rem;
-            }
-
-            .card p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    @media(max-width:480px){
+        .hero h1 { font-size:2rem; }
+        .hero p { font-size:1.2rem; }
+        .card h3 { font-size:1.1rem; }
+        .card p { font-size:0.9rem; }
+    }
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- NAVIGATION -->
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="blog.html">Blog</a> |
-            <a href="help.html">Help</a> |
-            <a href="contact.html">Contact</a> |
-            <a href="coming-soon.html">App Coming Soon</a>
-        </nav>
+<div class="container">
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="blog.html">Blog</a> |
+        <a href="help.html">Help</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="coming-soon.html">App Coming Soon</a>
+    </nav>
 
-        <!-- HERO SECTION -->
-        <div class="hero">
-            <h1>Master Azerbaijani</h1>
-            <p>Learn Azerbaijani your way. One word a day, cultural insights, and interactive tips—all to connect you with your heritage.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Master Azerbaijani</h1>
+        <p>Explore language. Embrace culture. Share heritage.</p>
+    </div>
+
+    <!-- Latest Blog Posts -->
+    <div class="grid">
+        <div class="card">
+            <h3>Post 1: Getting Started</h3>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
         </div>
-
-        <!-- GRID SECTION -->
-        <div class="grid-section">
-            <!-- WORD OF THE DAY -->
-            <div class="card word-of-day coming-soon">
-                <h3>Word of the Day: Salam</h3>
-                <p>Hello / Hi (Coming Soon)</p>
-                <div class="social-icons">
-                    <span>📸 Insta</span> <span>▶️ YouTube</span> <span>🎵 TikTok</span>
-                </div>
-            </div>
-
-            <div class="card word-of-day coming-soon">
-                <h3>Word of the Day: Təşəkkür</h3>
-                <p>Thank you (Coming Soon)</p>
-                <div class="social-icons">
-                    <span>📸 Insta</span> <span>▶️ YouTube</span> <span>🎵 TikTok</span>
-                </div>
-            </div>
-
-            <!-- BLOG POSTS -->
-            <div class="card post-card coming-soon">
-                <h3>5 Common Greetings</h3>
-                <p>Learn simple phrases to start speaking Azerbaijani (Coming Soon)</p>
-            </div>
-
-            <div class="card post-card coming-soon">
-                <h3>Numbers 1-10</h3>
-                <p>Begin your journey with basic numbers (Coming Soon)</p>
-            </div>
-
-            <div class="card post-card coming-soon">
-                <h3>Connecting with Your Heritage</h3>
-                <p>Tips for practicing Azerbaijani with family (Coming Soon)</p>
-            </div>
+        <div class="card">
+            <h3>Post 2: 5 Common Phrases</h3>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
         </div>
-
-        <!-- CONTACT -->
-        <div class="contact">
-            Questions? Ideas? Just want to chat?<br>
-            <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
+        <div class="card">
+            <h3>Post 3: Cultural Insights</h3>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+        </div>
+        <div class="card">
+            <h3>Post 4: Family Connections</h3>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+        </div>
+        <div class="card">
+            <h3>Post 5: Useful Vocabulary</h3>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
         </div>
     </div>
+
+    <!-- Word of the Day / Social Media -->
+    <h2 style="text-align:center; margin-bottom:20px;">Word of the Day</h2>
+    <div class="social-grid">
+        <!-- Instagram -->
+        <div class="social-card">
+            <svg viewBox="0 0 448 512">
+                <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54.39,54.39,0,0,0-30.58-30.58C294.29,124,224,124,224,124s-70.29,0-94.13,7.08a54.39,54.39,0,0,0-30.58,30.58C97,153.71,97,224,97,224s0,70.29,7.08,94.13a54.39,54.39,0,0,0,30.58,30.58C153.71,305,224,305,224,305s70.29,0,94.13-7.08a54.39,54.39,0,0,0,30.58-30.58C351,294.29,351,224,351,224S351,153.71,348.71,161.66ZM224,338a82,82,0,1,1,82-82A82,82,0,0,1,224,338Zm85.5-148.5a19,19,0,1,1-19-19A19,19,0,0,1,309.5,189.5Z"/>
+            </svg>
+            <p>Instagram</p>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+        </div>
+        <!-- YouTube -->
+        <div class="social-card">
+            <svg viewBox="0 0 576 512">
+                <path d="M549.655 124.083c-6.281-23.696-24.851-42.27-48.548-48.548C456.065 64 288 64 288 64s-168.065 0-213.107 11.535c-23.696 6.281-42.27 24.852-48.548 48.548C16 168.13 16 256 16 256s0 87.871 10.345 131.917c6.281 23.696 24.852 42.27 48.548 48.548C119.935 448 288 448 288 448s168.065 0 213.107-11.535c23.696-6.281 42.267-24.852 48.548-48.548C560 343.871 560 256 560 256s0-87.87-10.345-131.917zM232 334V178l142 78-142 78z"/>
+            </svg>
+            <p>YouTube</p>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+        </div>
+        <!-- TikTok -->
+        <div class="social-card">
+            <svg viewBox="0 0 448 512">
+                <path d="M448,209.91a210.34,210.34,0,0,1-65.21-10.33v92.88a128,128,0,1,1-128-128h0V234.9a84.21,84.21,0,1,0,84,84h0V209.91Z"/>
+            </svg>
+            <p>TikTok</p>
+            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+        Questions? Ideas? Just want to chat?<br />
+        <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
+    </div>
+</div>
 </body>
 </html>
