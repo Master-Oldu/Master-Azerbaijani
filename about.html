@@ -81,7 +81,8 @@
         }
     </style>
 </head>
-<body>
+<!-- Add data-page attribute -->
+<body data-page="about">
     <div class="container">
         <!-- NAVIGATION BAR -->
         <nav>
@@ -107,18 +108,15 @@
         © 2025 Master Azerbaijani
     </footer>
 
-    <!-- Auto-highlight current nav item (works on all pages) -->
     <script>
+    // Highlight nav link based on body data-page
     (function() {
+        var currentPage = document.body.getAttribute('data-page');
         var links = document.querySelectorAll('nav a');
-        var current = window.location.pathname.split('/').pop();
-
-        // Treat root or empty as home
-        if (!current || current === '' || current === '/') current = 'index.html';
 
         links.forEach(function(link) {
             var href = link.getAttribute('href').split('#')[0].split('?')[0];
-            if ((current === 'index.html' && (href === 'index.html' || href === '/')) || href === current) {
+            if (href.includes(currentPage)) {
                 link.classList.add('active');
                 link.setAttribute('aria-current','page');
             }
