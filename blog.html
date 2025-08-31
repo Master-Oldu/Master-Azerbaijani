@@ -12,10 +12,8 @@ body {
     background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* stack container + footer */
     color: white;
-    padding: 20px;
 }
 
 .container {
@@ -28,6 +26,8 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* horizontal center with some top/bottom margin */
+    flex: 1; /* container grows to fill vertical space */
 }
 
 nav {
@@ -59,7 +59,7 @@ nav a.active {
 }
 
 nav a.active:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 h1 { font-size:3rem; margin-bottom:20px; font-weight:700; text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
@@ -69,7 +69,6 @@ p { font-size:1.2rem; line-height:1.5; margin-bottom:20px;}
 .post-list li { margin-bottom:15px; font-size:1.1rem;}
 .post-list a { color:#ffeb3b; text-decoration:none; }
 .post-list a.coming-soon { opacity:0.7; pointer-events:none; cursor:not-allowed; }
-
 
 @media (max-width:480px) {
     h1 { font-size:2rem; }
