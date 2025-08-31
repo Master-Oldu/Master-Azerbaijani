@@ -113,10 +113,13 @@ footer {
 (function() {
   var links = document.querySelectorAll('nav a');
   var current = window.location.pathname.split('/').pop().toLowerCase();
-  if (!current || current === '') current = 'about.html';
+
+  // Only treat root as index.html
+  if (!current || current === '/') current = 'index.html';
 
   links.forEach(function(link) {
     var href = link.getAttribute('href').split('#')[0].split('?')[0].toLowerCase();
+    // Use exact match
     if (href === current) {
       link.classList.add('active');
       link.setAttribute('aria-current','page');
@@ -124,5 +127,6 @@ footer {
   });
 })();
 </script>
+
 </body>
 </html>
