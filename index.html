@@ -74,10 +74,22 @@
             gap: 40px;
             flex-wrap: wrap;
         }
-        .social-icons a img {
-            width: 60px;
-            height: 60px;
-            display: block;
+        .icon-card {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .icon-card img {
+            width: 50px;
+            height: 50px;
+        }
+        .icon-card:hover {
+            transform: scale(1.1);
         }
         .contact {
             text-align: center;
@@ -114,7 +126,7 @@
 
         <!-- LATEST POSTS -->
         <div class="latest-posts">
-            <h2>Latest Posts (Coming Soon) </h2>
+            <h2>Latest Posts (Coming Soon)</h2>
             <div class="post-grid">
                 <div class="post-card"><a href="#" class="coming-soon">Post 1: Coming Soon</a></div>
                 <div class="post-card"><a href="#" class="coming-soon">Post 2: Coming Soon</a></div>
@@ -126,16 +138,19 @@
 
         <!-- WORD OF THE DAY -->
         <div class="word-of-day">
-            <h2>Word of the Day (Coming Soon) </h2>
+            <h2>Word of the Day (Coming Soon)</h2>
             <div class="social-icons">
-                <a href="#" target="_blank">
+                <!-- Instagram -->
+                <a href="#" target="_blank" class="icon-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 </a>
-                <a href="#" target="_blank">
+                <!-- YouTube -->
+                <a href="#" target="_blank" class="icon-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
                 </a>
-                <a href="#" target="_blank">
-                    <img src="images/tiktok.png" alt="TikTok">
+                <!-- TikTok -->
+                <a href="#" target="_blank" class="icon-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/09/TikTok_logo.png" alt="TikTok">
                 </a>
             </div>
         </div>
