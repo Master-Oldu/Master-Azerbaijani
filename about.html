@@ -70,15 +70,13 @@ p {
     text-decoration: none;
     word-break: break-all;
 }
-
 footer {
-            text-align: center;
-            color: white;
-            padding: 20px;
-            font-size: 0.9rem;
-            background: rgba(0,0,0,0.2);
-        }
-
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.2);
+}
 @media(max-width:480px) {
     h1 { font-size:2rem; }
     p { font-size:1rem; }
@@ -95,35 +93,36 @@ footer {
         <a href="help.html">Help</a>
         <a href="coming-soon.html">App Coming Soon</a>
     </nav>
+
     <h1>About Master Azerbaijani</h1>
     <p>Welcome! Master Azerbaijani is designed to help families and heritage learners connect with their roots. Our goal is to provide interactive lessons, native audio pronunciation, and cultural context that goes beyond just words.</p>
     <p>Whether you’re living abroad or just starting your journey, this platform makes it easy to learn and practice Azerbaijani at your own pace. Built with love and understanding for busy people who want to connect with their heritage.</p>
+
     <div class="contact">
         Questions? Ideas? Just want to chat?<br />
         <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
     </div>
 </div>
 
-  <!-- FOOTER -->
-    <footer>
-        © 2025 Master Azerbaijani
-    </footer>
+<footer>
+    © 2025 Master Azerbaijani
+</footer>
 
 <!-- Auto-highlight current nav item -->
 <script>
 (function() {
   var links = document.querySelectorAll('nav a');
-  var currentUrl = window.location.href.toLowerCase();
+  var current = window.location.pathname.split('/').pop().toLowerCase();
+  if (!current || current === '') current = 'index.html';
+
   links.forEach(function(link) {
-    var href = link.getAttribute('href').toLowerCase();
-    // Highlight if the current full URL contains the link's href
-    if (currentUrl.indexOf(href) !== -1) {
+    var href = link.getAttribute('href').split('#')[0].split('?')[0].toLowerCase();
+    if (href === current) {
       link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
+      link.setAttribute('aria-current','page');
     }
   });
 })();
-</script>
 </script>
 </body>
 </html>
