@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About - Master Azerbaijani</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
@@ -19,24 +14,21 @@
             flex-direction: column;
             color: white;
         }
-
         .container {
             text-align: center;
             max-width: 1200px;
             width: 90%;
             padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             flex: 1;
         }
-
         nav {
             margin-bottom: 30px;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -47,50 +39,33 @@
             border-radius: 8px;
             transition: transform 0.3s ease, text-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
-
-        /* Hover effect for all links */
         nav a:hover {
             transform: scale(1.1);
             text-shadow: 0 0 8px rgba(255,255,255,0.7);
             background: rgba(255,255,255,0.12);
         }
-
-        /* Active/current page */
         nav a.active {
             transform: scale(1.15);
             color: #ffeb3b;
             background: rgba(255,255,255,0.18);
             text-shadow: 0 0 12px rgba(255,235,59,0.9);
         }
-
-        nav a.active:hover {
-            transform: scale(1.2);
-        }
+        nav a.active:hover { transform: scale(1.2); }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+        p { font-size: 1.2rem; line-height: 1.5; margin-bottom: 20px; }
 
         .contact {
             margin-top: 30px;
             font-size: 0.9rem;
             opacity: 0.8;
         }
-
-        .contact a {
-            color: #ffeb3b;
-            text-decoration: none;
-            word-break: break-all;
-        }
+        .contact a { color: #ffeb3b; text-decoration: none; word-break: break-all; }
 
         footer {
             text-align: center;
@@ -106,10 +81,8 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <!-- NAVIGATION BAR -->
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -133,21 +106,18 @@
         © 2025 Master Azerbaijani
     </footer>
 
-    <!-- Auto-highlight current nav item -->
     <script>
+    // Auto-highlight current nav item
     (function() {
         var links = document.querySelectorAll('nav a');
         var current = window.location.pathname.split('/').pop();
-
-        if (!current || current === '' || current === '/') {
-            current = 'index.html';
-        }
+        if (!current) current = 'index.html';
 
         links.forEach(function(link) {
             var href = link.getAttribute('href').split('#')[0].split('?')[0];
-            if ((current === 'about.html' && href === 'about.html') || href === current) {
+            if (href === current) {
                 link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
+                link.setAttribute('aria-current','page');
             }
         });
     })();
