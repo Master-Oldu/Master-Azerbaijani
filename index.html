@@ -6,67 +6,40 @@
 <title>Master Azerbaijani - Home</title>
 <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-        min-height:100vh; color:#fff; padding:20px;
-    }
-    nav {
-        text-align:center; margin-bottom:30px;
-    }
-    nav a {
-        color:#fff; text-decoration:none; margin:0 10px; font-weight:600;
-    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+           color: #fff; min-height:100vh; padding:20px; }
+
+    .container { max-width:1200px; width:90%; margin:auto; }
+
+    nav { text-align:center; margin-bottom:30px; }
+    nav a { color:white; text-decoration:none; margin:0 10px; font-weight:600; }
     nav a:hover { text-decoration:underline; }
 
-    .container { max-width:1200px; margin:auto; }
+    .hero { text-align:center; margin-bottom:50px; }
+    .hero h1 { font-size:3rem; margin-bottom:20px; text-shadow:2px2px4px rgba(0,0,0,0.3); }
+    .hero p { font-size:1.4rem; opacity:0.9; max-width:800px; margin:auto; }
 
-    .hero {
-        text-align:center; padding:60px 20px; background:rgba(255,255,255,0.1);
-        border-radius:20px; backdrop-filter:blur(10px); margin-bottom:40px;
-        box-shadow:0 8px 32px rgba(0,0,0,0.1);
-    }
-    .hero h1 { font-size:3rem; margin-bottom:20px; font-weight:700; text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
-    .hero p { font-size:1.5rem; opacity:0.9; }
+    .posts, .social { margin-bottom:50px; }
+    .posts h2, .social h2 { text-align:center; font-size:1.8rem; margin-bottom:30px; }
 
-    .grid {
-        display:grid; gap:20px; justify-content:center;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        margin-bottom:40px;
-    }
+    .posts-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; justify-items:center; }
+    .post-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); padding:20px; border-radius:15px; text-align:center;
+                 border:1px solid rgba(255,255,255,0.2); box-shadow:0 4px 20px rgba(0,0,0,0.1); width:100%; max-width:250px; }
+    .post-card a { color:#ffeb3b; text-decoration:none; font-weight:600; }
+    .post-card a.coming-soon { opacity:0.7; pointer-events:none; cursor:not-allowed; }
 
-    .card {
-        background:rgba(255,255,255,0.1); padding:20px; border-radius:15px;
-        text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.1);
-    }
+    .social-grid { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; }
+    .social-card { width:80px; text-align:center; }
+    .social-card svg { width:50px; height:50px; margin-bottom:8px; }
 
-    .card h3 { margin-bottom:15px; font-size:1.3rem; }
-    .card p { font-size:1rem; opacity:0.9; }
-    .card a { color:#ffeb3b; text-decoration:none; }
-    .card a.coming-soon { opacity:0.7; pointer-events:none; cursor:not-allowed; }
-
-    .social-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-    .social-card {
-        display:flex; flex-direction:column; align-items:center;
-        background:rgba(255,255,255,0.1); padding:15px; border-radius:15px;
-        width:120px; box-shadow:0 4px 20px rgba(0,0,0,0.1);
-    }
-    .social-card svg { width:40px; height:40px; margin-bottom:10px; fill:#ffeb3b; }
-
-    .contact { text-align:center; font-size:0.9rem; opacity:0.8; margin-top:40px; }
-    .contact a { color:#ffeb3b; text-decoration:none; word-break:break-all; }
-
-    @media(max-width:480px){
-        .hero h1 { font-size:2rem; }
-        .hero p { font-size:1.2rem; }
-        .card h3 { font-size:1.1rem; }
-        .card p { font-size:0.9rem; }
-    }
+    @media(max-width:480px){ .hero h1{font-size:2rem;} .hero p{font-size:1.1rem;} }
 </style>
 </head>
 <body>
 <div class="container">
-    <!-- Navigation -->
+
+    <!-- NAVIGATION -->
     <nav>
         <a href="index.html">Home</a> |
         <a href="about.html">About</a> |
@@ -76,70 +49,59 @@
         <a href="coming-soon.html">App Coming Soon</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <div class="hero">
         <h1>Master Azerbaijani</h1>
-        <p>Explore language. Embrace culture. Share heritage.</p>
+        <p>Discover your roots and connect with the Azerbaijani language. Daily words, cultural insights, and interactive content designed for heritage learners everywhere.</p>
     </div>
 
-    <!-- Latest Blog Posts -->
-    <div class="grid">
-        <div class="card">
-            <h3>Post 1: Getting Started</h3>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <div class="card">
-            <h3>Post 2: 5 Common Phrases</h3>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <div class="card">
-            <h3>Post 3: Cultural Insights</h3>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <div class="card">
-            <h3>Post 4: Family Connections</h3>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <div class="card">
-            <h3>Post 5: Useful Vocabulary</h3>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-    </div>
-
-    <!-- Word of the Day / Social Media -->
-    <h2 style="text-align:center; margin-bottom:20px;">Word of the Day</h2>
-    <div class="social-grid">
-        <!-- Instagram -->
-        <div class="social-card">
-            <svg viewBox="0 0 448 512">
-                <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54.39,54.39,0,0,0-30.58-30.58C294.29,124,224,124,224,124s-70.29,0-94.13,7.08a54.39,54.39,0,0,0-30.58,30.58C97,153.71,97,224,97,224s0,70.29,7.08,94.13a54.39,54.39,0,0,0,30.58,30.58C153.71,305,224,305,224,305s70.29,0,94.13-7.08a54.39,54.39,0,0,0,30.58-30.58C351,294.29,351,224,351,224S351,153.71,348.71,161.66ZM224,338a82,82,0,1,1,82-82A82,82,0,0,1,224,338Zm85.5-148.5a19,19,0,1,1-19-19A19,19,0,0,1,309.5,189.5Z"/>
-            </svg>
-            <p>Instagram</p>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <!-- YouTube -->
-        <div class="social-card">
-            <svg viewBox="0 0 576 512">
-                <path d="M549.655 124.083c-6.281-23.696-24.851-42.27-48.548-48.548C456.065 64 288 64 288 64s-168.065 0-213.107 11.535c-23.696 6.281-42.27 24.852-48.548 48.548C16 168.13 16 256 16 256s0 87.871 10.345 131.917c6.281 23.696 24.852 42.27 48.548 48.548C119.935 448 288 448 288 448s168.065 0 213.107-11.535c23.696-6.281 42.267-24.852 48.548-48.548C560 343.871 560 256 560 256s0-87.87-10.345-131.917zM232 334V178l142 78-142 78z"/>
-            </svg>
-            <p>YouTube</p>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
-        </div>
-        <!-- TikTok -->
-        <div class="social-card">
-            <svg viewBox="0 0 448 512">
-                <path d="M448,209.91a210.34,210.34,0,0,1-65.21-10.33v92.88a128,128,0,1,1-128-128h0V234.9a84.21,84.21,0,1,0,84,84h0V209.91Z"/>
-            </svg>
-            <p>TikTok</p>
-            <p><a href="#" class="coming-soon">Coming Soon</a></p>
+    <!-- SOCIAL MEDIA / WORD OF THE DAY -->
+    <div class="social">
+        <h2>Word of the Day</h2>
+        <div class="social-grid">
+            <div class="social-card">
+                <!-- Instagram SVG -->
+                <svg viewBox="0 0 512 512">
+                    <linearGradient id="instaGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#f58529"/>
+                        <stop offset="50%" stop-color="#dd2a7b"/>
+                        <stop offset="100%" stop-color="#8134af"/>
+                    </linearGradient>
+                    <path fill="url(#instaGrad)" d="M349.33 69.33H162.67C107.1 69.33 69.33 107.1 69.33 162.67v186.67c0 55.57 37.77 93.34 93.34 93.34h186.66c55.57 0 93.34-37.77 93.34-93.34V162.67c0-55.57-37.77-93.34-93.34-93.34zm62.67 280c0 34.47-28.2 62.67-62.67 62.67H162.67c-34.47 0-62.67-28.2-62.67-62.67V162.67c0-34.47 28.2-62.67 62.67-62.67h186.66c34.47 0 62.67 28.2 62.67 62.67v186.66z"/>
+                    <circle fill="#fff" cx="256" cy="256" r="60"/>
+                    <circle fill="#fff" cx="350" cy="162" r="12"/>
+                </svg>
+                <div>Instagram</div>
+            </div>
+            <div class="social-card">
+                <!-- YouTube SVG -->
+                <svg viewBox="0 0 576 512">
+                    <path fill="#FF0000" d="M549.655 124.083c-6.281-23.65-24.832-42.174-48.456-48.457C456.376 64 288 64 288 64s-168.376 0-213.199 11.626c-23.624 6.283-42.175 24.807-48.456 48.457C16 168.905 16 256 16 256s0 87.095 10.345 131.917c6.281 23.65 24.832 42.174 48.456 48.457C119.624 448 288 448 288 448s168.376 0 213.199-11.626c23.624-6.283 42.175-24.807 48.456-48.457C560 343.095 560 256 560 256s0-87.095-10.345-131.917zM232 336V176l144 80-144 80z"/>
+                </svg>
+                <div>YouTube</div>
+            </div>
+            <div class="social-card">
+                <!-- TikTok SVG -->
+                <svg viewBox="0 0 448 512">
+                    <path fill="#69C9D0" d="M448,209.9c-13.7,6.1-28.5,10.2-44.1,11.8V106.6h-59.3v205.6c0,34.3-27.8,62-62,62c-32.2,0-58.6-25-61.7-56.8c-0.1-1.2-0.2-2.4-0.2-3.6c0-6.2,0-12.5,0-18.7c0-2.1,0-4.1,0-6.2c0-2.4,0-4.8,0-7.2v-73.8h-45.3c-6.1,0-12.1,0-18.2,0v129.6c0,76.2,61.8,138,138,138c76.2,0,138-61.8,138-138V209.9z"/>
+                </svg>
+                <div>TikTok</div>
+            </div>
         </div>
     </div>
 
-    <!-- Contact -->
-    <div class="contact">
-        Questions? Ideas? Just want to chat?<br />
-        <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
+    <!-- LATEST POSTS -->
+    <div class="posts">
+        <h2>Latest Posts</h2>
+        <div class="posts-grid">
+            <div class="post-card"><a href="#" class="coming-soon">Post 1: Getting Started with Azerbaijani</a></div>
+            <div class="post-card"><a href="#" class="coming-soon">Post 2: 5 Common Phrases for Travelers</a></div>
+            <div class="post-card"><a href="#" class="coming-soon">Post 3: Connecting with Your Heritage</a></div>
+            <div class="post-card"><a href="#" class="coming-soon">Post 4: Family & Culture Insights</a></div>
+            <div class="post-card"><a href="#" class="coming-soon">Post 5: Pronunciation Tips</a></div>
+        </div>
     </div>
+
 </div>
 </body>
 </html>
