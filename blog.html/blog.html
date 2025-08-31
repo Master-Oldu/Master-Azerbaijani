@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog - Master Azerbaijani</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-list {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .post-list ul {
+            list-style: none;
+        }
+
+        .post-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .post-list a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+
+        .post-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .post-list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NAVIGATION BAR -->
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="help.html">Help</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="blog.html">Blog</a>
+        </nav>
+
+        <h1>Blog</h1>
+        <p>Welcome to the Master Azerbaijani blog! Here, you’ll find posts on language tips, cultural insights, and updates about the platform.</p>
+
+        <div class="post-list">
+            <ul>
+                <li><a href="#">Post 1: Getting Started with Azerbaijani</a></li>
+                <li><a href="#">Post 2: 5 Common Phrases for Travelers</a></li>
+                <li><a href="#">Post 3: Connecting with Your Heritage</a></li>
+                <!-- Add more posts here -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
