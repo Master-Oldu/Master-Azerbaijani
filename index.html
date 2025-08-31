@@ -16,6 +16,7 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      background: #fafafa;
     }
 
     /* NAVBAR */
@@ -95,6 +96,14 @@
       text-align: center;
     }
 
+    section:nth-child(even) {
+      background: #ffffff;
+    }
+
+    section:nth-child(odd) {
+      background: #f9f9f9;
+    }
+
     section h2 {
       font-size: 36px;
       margin-bottom: 20px;
@@ -114,6 +123,7 @@
       padding: 20px;
       text-align: left;
       transition: all 0.3s ease;
+      background: #fff;
     }
 
     .blog-card:hover {
@@ -131,12 +141,32 @@
       color: #555;
     }
 
+    /* WORD OF THE DAY */
+    .word-of-day {
+      padding: 60px 20px;
+      background: #eef6ff;
+      border-top: 3px solid #0077cc;
+      border-bottom: 3px solid #0077cc;
+      text-align: center;
+    }
+
+    .word-of-day h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .word-of-day p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #0077cc;
+    }
+
     /* FOOTER */
     footer {
       background: #f5f5f5;
       padding: 20px;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 0;
     }
   </style>
 </head>
@@ -191,14 +221,15 @@
     <p>Need support? Reach out and we’ll guide you through your learning journey.</p>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at hello@masterazerbaijani.com</p>
+  <!-- WORD OF THE DAY -->
+  <section class="word-of-day">
+    <h2>Word of the Day</h2>
+    <p><em>Salam</em> — Hello</p>
   </section>
 
-  <!-- FOOTER -->
+  <!-- CONTACT + FOOTER -->
   <footer>
+    <p>Contact: hello@masterazerbaijani.com</p>
     <p>&copy; 2025 Master Azerbaijani</p>
   </footer>
 
