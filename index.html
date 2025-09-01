@@ -130,6 +130,12 @@
             transition: transform 0.2s, color 0.2s;
             cursor: default;
         }
+        /* Updated hover to match Latest Posts */
+        .word-of-day h2:hover {
+            color: #ffeb3b;
+            transform: translateY(-5px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
         .word-of-day p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
 
         .social-icons {
@@ -195,7 +201,7 @@
         <div class="hero">
             <h1>Master Azerbaijani</h1>
             <p>Learn Azerbaijani from a diaspora native! Fun, bite-sized lessons for English speakers.</p>
-            <a href="mailto:hello@masterazerbaijani.com" class="cta-btn">Join the Waitlist</a>
+            <a href="mailto:welcome@masterazerbaijani.com" class="cta-btn">Join the Waitlist</a>
         </div>
 
         <!-- LATEST POSTS -->
@@ -207,7 +213,7 @@
                 <div class="post-card"><a href="#">Azerbaijani Alphabet Made Easy</a></div>
                 <div class="post-card"><a href="#">Common Phrases for Everyday Use</a></div>
                 <div class="post-card"><a href="#">Tips for Practicing Azerbaijani Daily</a></div>
-<div class="post-card"><a href="#">5 Common Phrases for Travelers</a></div>
+                <div class="post-card"><a href="#">5 Common Phrases for Travelers</a></div>
             </div>
         </div>
 
@@ -231,36 +237,4 @@
         <!-- CONTACT -->
         <div class="contact">
             Questions? Ideas? Just want to chat?<br>
-            <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 Master Azerbaijani
-    </footer>
-
-    <!-- Auto-highlight current nav item -->
-<script>
-(function() {
-    var links = document.querySelectorAll('nav a');
-    var current = window.location.pathname.split('/').pop();
-
-    // If at root or empty, treat as home
-    if (!current || current === '' || current === '/') {
-        current = 'index.html';
-    }
-
-    links.forEach(function(link) {
-        var href = link.getAttribute('href').split('#')[0].split('?')[0];
-
-        // Treat both '/' and 'index.html' as home
-        if ((current === 'index.html' && (href === 'index.html' || href === '/')) || href === current) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-        }
-    });
-})();
-</script>
-</body>
-</html>
+            <a href="mailto:hello@masterazerbaijani.com">hello
