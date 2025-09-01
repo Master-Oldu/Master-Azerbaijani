@@ -98,15 +98,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Countdown timer styling with glow */
-#countdown {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #ffeb3b;
-    text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b;
-}
-
 .join-btn {
     display: inline-block;
     background: #ffeb3b;
@@ -122,6 +113,20 @@ h1 {
 .join-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.countdown {
+    font-size: 2.5rem; /* larger for visibility */
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; }
+    100% { text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff; }
 }
 
 .features {
@@ -211,11 +216,9 @@ footer {
     </div>
 
     <div class="email-signup">
-        <p style="margin-bottom: 15px; font-size: 1.1rem;">Be the first to know when we launch:</p>
-        
-        <!-- Countdown Timer -->
-        <div id="countdown"></div>
+        <div id="countdown" class="countdown">00d 00h 00m 00s</div> <!-- countdown will appear here -->
 
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">Be the first to know when we launch:</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSchAl_aV-b9vF2ah5HPzdfD8OiWQ-J4uwtu_VLt7WfP_tGR3A/viewform?usp=sf_link" target="_blank" class="join-btn">
             Join the Waitlist
         </a>
@@ -245,25 +248,29 @@ footer {
 
 <script>
 // Countdown Timer Script
+const countdownElement = document.getElementById('countdown');
+// Set launch date
 const launchDate = new Date("March 20, 2026 00:00:00").getTime();
-const countdownFunction = setInterval(function() {
+
+function updateCountdown() {
     const now = new Date().getTime();
     const distance = launchDate - now;
 
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "We have launched!";
-        clearInterval(countdownFunction);
+    if(distance < 0) {
+        countdownElement.innerHTML = "Launched!";
         return;
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24))/(1000*60*60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60))/(1000*60));
+    const seconds = Math.floor((distance % (1000 * 60))/1000);
 
-    document.getElementById("countdown").innerHTML = 
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}, 1000);
+    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html>
