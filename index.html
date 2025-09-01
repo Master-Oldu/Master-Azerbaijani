@@ -36,17 +36,20 @@
             border-radius: 8px;
             transition: transform 0.3s ease, text-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
+ /* Hover grow for ALL nav links */
         nav a:hover {
             transform: scale(1.1);
             text-shadow: 0 0 10px rgba(255,255,255,0.7);
             background: rgba(255,255,255,0.12);
         }
+ /* Active/current page link: bigger + highlighted */
         nav a.active {
             transform: scale(1.15);
             color: #ffeb3b;
             background: rgba(255,255,255,0.18);
             text-shadow: 0 0 12px rgba(255,235,59,0.9);
         }
+/* Active + hover: a touch more */
         nav a.active:hover { transform: scale(1.2); }
 
         .hero {
@@ -84,7 +87,7 @@
             font-size: 3rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             transition: transform 0.2s, color 0.2s;
             cursor: default;
         }
@@ -126,7 +129,7 @@
             font-size: 3rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
+            margin-bottom: 60px;
             transition: transform 0.2s, color 0.2s;
             cursor: default;
         }
@@ -134,7 +137,6 @@
         .word-of-day h2:hover {
             color: #ffeb3b;
             transform: translateY(-5px);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .word-of-day p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
 
@@ -220,7 +222,7 @@
         <!-- WORD OF THE DAY -->
         <div class="word-of-day">
             <h2>Word of the Day</h2>
-            <p>Coming soon: bite-sized vocabulary lessons to get you speaking Azerbaijani fast!</p>
+            <p>Coming soon: snackable vocabulary lessons to get you speaking Azerbaijani fast!</p>
             <div class="social-icons">
                 <a href="#" target="_blank" class="icon-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
@@ -237,4 +239,36 @@
         <!-- CONTACT -->
         <div class="contact">
             Questions? Ideas? Just want to chat?<br>
-            <a href="mailto:hello@masterazerbaijani.com">hello
+            <a href="mailto:hello@masterazerbaijani.com">hello@masterazerbaijani.com</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+    <footer>
+        © 2025 Master Azerbaijani
+    </footer>
+
+    <!-- Auto-highlight current nav item -->
+<script>
+(function() {
+    var links = document.querySelectorAll('nav a');
+    var current = window.location.pathname.split('/').pop();
+
+    // If at root or empty, treat as home
+    if (!current || current === '' || current === '/') {
+        current = 'index.html';
+    }
+
+    links.forEach(function(link) {
+        var href = link.getAttribute('href').split('#')[0].split('?')[0];
+
+        // Treat both '/' and 'index.html' as home
+        if ((current === 'index.html' && (href === 'index.html' || href === '/')) || href === current) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+})();
+</script>
+</body>
+</html>
