@@ -84,12 +84,16 @@ align-items: center;
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
+background: none;
+            border: none;
+            padding: 5px;
     }
     .menu-toggle span {
       width: 25px;
       height: 3px;
       background: white;
       border-radius: 2px;
+transition: all 0.3s ease;
     }
 
 /* Mobile Menu Hidden */
@@ -106,6 +110,8 @@ align-items: center;
         border-radius: 12px;
         width: 200px;
         text-align: right;
+z-index: 1000;
+margin-top: 10px;
       }
 
 nav.show {
@@ -271,6 +277,15 @@ nav.show {
                 <a href="index.html" class="logo">
                     <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
                 </a>
+<!-- HAMBURGER BUTTON (NOW ADDED) -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- NAV WITH ID ADDED -->
+                <nav id="nav-menu">
+
                 <nav>
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
@@ -354,9 +369,11 @@ nav.show {
 // Mobile menu toggle
     const toggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
+if (toggle && navMenu) {
     toggle.addEventListener('click', () => {
       navMenu.classList.toggle('show');
 });
+}
     </script>
 </body>
 </html>
