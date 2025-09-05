@@ -106,74 +106,65 @@ transition: all 0.3s ease;
 inset: 0;
             top: 0;
             left: 0;
-right: 0;
-bottom: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.45);
+            width: 100%;
+            height: 100&;
+            background: rgba(0, 0, 0, 0.7);
             z-index: 9998;
-            backdrop-filter: blur(8px);
-display: none;
+            backdrop-filter: blur(5px);
         }
         
         .menu-overlay.show {
             display: block;
         }
 
-.menu-content {
-    position: absolute;
-    top: 80px;
-    right: 24px;
-    background: rgba(34, 48, 54, 0.98);
-    color: #fff;
-    border-radius: 12px;
-    z-index: 9999; /* higher than overlay */
-    padding: 20px 16px;
-    min-width: 200px;
-}
 
 /* Mobile Menu Hidden */
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        top: 100%;
-        right: 0;
+        gap: 10px;
+        position: fixed;
+        top: 90px;
+        right: 20px;
         background: rgba(0,0,0,0.95);
 background-filter: blur(3px);
-        padding: 15px;
+        padding: 20px;
         border-radius: 12px;
         width: 200px;
-        text-align: right;
+        text-align: left;
 z-index: 9999;
 margin-top: 10px;
+border: 2px solid rgba(255,255,255,0.2);
+box-shadow: 0 8px rgba(0,0,0,0.5);
       }
 
 nav.show {
-        display: flex;
+        display: flex !important;
       }
-      .menu-toggle {
-        display: flex;
-}
-
-nav:not(.menu-content){
-display: none;
-}
 
 nav a {
                 color: white !important;
                 padding: 12px 15px;
                 border-radius: 8px;
                 background: rgba(255,255,255,0.1);
-                margin-bottom: 5px;
+                margin-bottom: 8px;
                 display: block;
+transform: none !important;
+                text-align: left;
             }
             
             nav a:hover {
                 background: rgba(255,255,255,0.2);
-                transform: none;
+                transform: none !important;
+text-shadow: none;
+            }
+
+
+nav a.active {
+                background: rgba(255,140,0,0.3);
+                color: #ff8c00 !important;
+                transform: none !important;
             }
             
             .menu-toggle {
@@ -324,7 +315,9 @@ nav a {
                 grid-template-columns: 1fr;
             }
             header .logo img { height: 30px; }
-            nav { gap: 15px; }
+            nav { gap: 15px;
+right: 15px;
+width: 180px; }
         }
     </style>
 </head>
@@ -345,9 +338,7 @@ nav a {
                     <span></span>
                 </button>
                 <!-- NAV WITH ID ADDED -->
-<div class="menu-overlay" id="menu-overlay">
-    <!-- Solid Menu Container (not blurred!) -->
-    <nav class="menu-content" id="nav-menu">
+<nav id="nav-menu">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="blog.html">Blog</a>
@@ -456,9 +447,11 @@ overlay.classList.toggle('show');
 
  // Close menu when overlay is clicked
         overlay.addEventListener('click', () => {
+if (e.target === overlay) {
             console.log('Overlay clicked - closing menu');
             navMenu.classList.remove('show');
             overlay.classList.remove('show');
+}
         });
 
         // Close menu when a nav link is clicked
