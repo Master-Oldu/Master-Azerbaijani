@@ -96,6 +96,7 @@ background: none;
 transition: all 0.3s ease;
     }
 
+
 /* Mobile Menu Hidden */
     @media (max-width: 768px) {
       nav {
@@ -271,7 +272,9 @@ nav.show {
 </head>
 <body>
     <div class="container">
-        <!-- HEADER WITH LOGO + NAV -->
+        
+
+<!-- HEADER WITH LOGO + NAV -->
         <header>
             <div class="nav-container">
                 <a href="index.html" class="logo">
@@ -285,8 +288,6 @@ nav.show {
                 </button>
                 <!-- NAV WITH ID ADDED -->
                 <nav id="nav-menu">
-
-                <nav>
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="blog.html">Blog</a>
@@ -297,14 +298,18 @@ nav.show {
             </div>
         </header>
 
-        <!-- HERO -->
+       
+
+ <!-- HERO -->
         <div class="hero">
             <h1>Master Azerbaijani</h1>
             <p>Learn Azerbaijani from a diaspora native! Fun, bite-sized lessons for English speakers.</p>
             <p>Master it like a pro! Bridge generations in your family, embrace your heritage, and explore a language that opens doors; whether at home, with loved ones, or on your travels.</p>
         </div>
 
-        <!-- LATEST POSTS -->
+      
+
+  <!-- LATEST POSTS -->
         <div class="latest-posts">
             <h2>Latest Posts</h2>
             <div class="post-grid">
@@ -317,7 +322,9 @@ nav.show {
             </div>
         </div>
 
-        <!-- WORD OF THE DAY -->
+       
+
+ <!-- WORD OF THE DAY -->
         <div class="word-of-day">
             <h2>Word of the Day</h2>
             <p>Coming soon: snackable vocabulary lessons to get you speaking Azerbaijani fast!</p>
@@ -346,6 +353,7 @@ nav.show {
         © 2025 Master Azerbaijani
     </footer>
 
+
     <!-- Auto-highlight current nav item -->
     <script>
     (function() {
@@ -367,13 +375,23 @@ nav.show {
     })();
 
 // Mobile menu toggle
-    const toggle = document.getElementById('menu-toggle');
+
+const toggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
-if (toggle && navMenu) {
-    toggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-});
-}
+    
+    console.log('Toggle element:', toggle); // Debug line
+    console.log('Nav menu element:', navMenu); // Debug line
+    
+    if (toggle && navMenu) {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default behavior
+            console.log('Hamburger clicked!'); // Debug line
+            navMenu.classList.toggle('show');
+            console.log('Nav classes after toggle:', navMenu.className); // Debug line
+        });
+    } else {
+        console.log('Could not find toggle or navMenu elements');
+    }
     </script>
 </body>
 </html>
