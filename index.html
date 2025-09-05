@@ -356,6 +356,7 @@ nav.show {
 
 
     <!-- Auto-highlight current nav item -->
+<div class="menu-overlay" id="menu-overlay"></div>
     <script>
     (function() {
         var links = document.querySelectorAll('nav a');
@@ -379,20 +380,41 @@ nav.show {
 
 const toggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
+const overlay = document.getElementById ('menu-overlay);
     
     console.log('Toggle element:', toggle); // Debug line
     console.log('Nav menu element:', navMenu); // Debug line
+console.log('Overlay element:', overlay);
     
-    if (toggle && navMenu) {
+    if (toggle && navMenu && overlay) {
         toggle.addEventListener('click', (e) => {
             e.preventDefault(); // Prevent any default behavior
             console.log('Hamburger clicked!'); // Debug line
             navMenu.classList.toggle('show');
+overlay.clasList.toggle('show');
             console.log('Nav classes after toggle:', navMenu.className); // Debug line
+        });
+
+ // Close menu when overlay is clicked
+        overlay.addEventListener('click', () => {
+            console.log('Overlay clicked - closing menu');
+            navMenu.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Close menu when a nav link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Nav link clicked - closing menu');
+                navMenu.classList.remove('show');
+                overlay.classList.remove('show');
+            });
         });
     } else {
         console.log('Could not find toggle or navMenu elements');
     }
+
     </script>
 </body>
 </html>
