@@ -36,7 +36,6 @@ backdrop-filter: blur(10px);
             padding: 10px 20px;
 border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-flex: 1;
 border-radius: 20px;
         }
         .nav-container {
@@ -45,11 +44,12 @@ border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+position: relative;
         }
         header .logo img {
             height: 50px;
             width: auto;
-            display: lex;
+            display: flex;
 align-items: center;
         }
         nav {
@@ -78,7 +78,46 @@ align-items: center;
         }
         nav a.active:hover { transform: scale(1.2); }
 
-        .hero {
+       /* Hamburger Button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+/* Mobile Menu Hidden */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0,0,0,0.8);
+        padding: 15px;
+        border-radius: 12px;
+        width: 200px;
+        text-align: right;
+      }
+
+nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+
+ .hero {
             text-align: center;
             padding: 60px 20px 40px;
             color: white;
@@ -311,6 +350,13 @@ align-items: center;
             }
         });
     })();
+
+// Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+});
     </script>
 </body>
 </html>
