@@ -30,9 +30,21 @@ body {
     flex: 1;
 }
 
+header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 10px 0;
+        }
+        header .logo img {
+            height: 120px;
+            width: auto;
+            max-width: 100%;
+        }
+
 nav {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 nav a {
@@ -53,10 +65,15 @@ nav a:hover {
 }
 
 nav a.active {
-    transform: scale(1.15);
-    color: #ffeb3b;
-    background: rgba(255,255,255,0.18);
-    text-shadow: 0 0 12px rgba(255,235,59,0.9);
+            transform: scale(1.15);
+            color: #ff8c00; /* orange instead of yellow */
+            text-shadow: 
+                    1px 1px 0 #cc6600, 
+                   -1px 1px 0 #cc6600, 
+                   1px -1px 0 #cc6600, 
+                  -1px -1px 0 #cc6600, /* a shade dark orange outline */
+                  0 0 5px rgba(255,140,0,0.9); /* glow effect if you want */
+                  background: rgba(255,255,255,0.18);
 }
 
 nav a.active:hover {
@@ -83,7 +100,7 @@ p {
 }
 
 .contact a {
-    color: #ffeb3b;
+    color: #ff8c00;
     text-decoration: none;
     word-break: break-all;
 }
@@ -103,6 +120,8 @@ ul li {
     h1 { font-size:2rem; }
     p { font-size:1rem; }
 }
+header .logo img { height: 80px; }  /* mobile size */
+        }
 
 footer {
     text-align: center;
@@ -115,7 +134,11 @@ footer {
 </head>
 <body>
 <div class="container">
-    <!-- NAVIGATION BAR -->
+ <!-- HEADER WITH LOGO + NAV -->
+        <header>
+            <a href="index.html" class="logo">
+                <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
+            </a>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -138,8 +161,10 @@ footer {
     <p>For all inquiries, please email us at:</p>
     <p class="contact"><a href="mailto:help@masterazerbaijani.com">help@masterazerbaijani.com</a></p>
 
-    <div class="contact">
         We’ll respond as quickly as possible. Your questions, feedback, and ideas are important! They help us build a better platform for families everywhere!
+
+    <div class="contact">
+
     </div>
 </div>
 
