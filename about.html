@@ -127,6 +127,7 @@ header .logo img { height: 80px; }  /* mobile size */
         <a href="help.html">Help</a>
         <a href="coming-soon.html">App Coming Soon</a>
     </nav>
+</header>
     <h1>About Master Azerbaijani</h1>
     <p>Hello everyone! I’m Shahla, a diaspora Azerbaijani and native speaker living abroad for the past 13 years (my lucky number). For years, I wanted to teach my husband and kids Azerbaijani, but between work, parenting, and life in a new country, it just never happened. Along the way, I realized many families like mine face the same struggle: wanting to pass on language and heritage but not knowing where to start or how to fit it into daily life.</p>
 <p>During those years, I learned what really works (and what definitely doesn’t) when teaching a heritage language to busy adults and curious kids. I experimented with fun ways to make learning stick, discovered how to sneak vocabulary into everyday life, and figured out how tech can bridge the gap when real-time teaching isn’t possible.</p>
@@ -143,26 +144,5 @@ header .logo img { height: 80px; }  /* mobile size */
 <footer>
     © 2025 Master Azerbaijani
 </footer>
-
-    <!-- Auto-highlight current nav item -->
-<script>
-(function() {
-    var links = document.querySelectorAll('nav a');
-    var current = window.location.pathname.split('/').pop();
-
-    if (!current || current === '' || current === '/') {
-        current = 'index.html';
-    }
-
-    links.forEach(function(link) {
-        var href = link.getAttribute('href').split('#')[0].split('?')[0];
-
-        if ((current === 'index.html' && (href === 'index.html' || href === '/')) || href === current) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-        }
-    });
-})();
-</script>
 </body>
 </html>
