@@ -17,16 +17,34 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
     text-align: center;
+    max-width: 1200px;
+    width: 90%;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
     flex: 1;
 }
 
+header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 10px 0;
+        }
+        header .logo img {
+            height: 120px;
+            width: auto;
+            max-width: 100%;
+        }
+
 nav {
     text-align: center;
-    margin-bottom: 40px;
 }
 
 nav a {
@@ -48,10 +66,15 @@ nav a:hover {
 
 /* Active link style */
 nav a.active {
-    transform: scale(1.15);
-    color: #ffeb3b;
-    background: rgba(255,255,255,0.18);
-    text-shadow: 0 0 12px rgba(255,235,59,0.9);
+            transform: scale(1.15);
+            color: #ff8c00; /* orange instead of yellow */
+            text-shadow: 
+                    1px 1px 0 #cc6600, 
+                   -1px 1px 0 #cc6600, 
+                   1px -1px 0 #cc6600, 
+                  -1px -1px 0 #cc6600, /* a shade dark orange outline */
+                  0 0 5px rgba(255,140,0,0.9); /* glow effect if you want */
+                  background: rgba(255,255,255,0.18);
 }
 
 nav a.active:hover {
@@ -95,11 +118,17 @@ footer {
     h1 { font-size:2rem; }
     p { font-size:1rem; }
 }
+header .logo img { height: 80px; }  /* mobile size */
+        }
 </style>
 </head>
 <body>
 <div class="container">
-    <!-- NAVIGATION BAR -->
+    <!-- HEADER WITH LOGO + NAV -->
+        <header>
+            <a href="index.html" class="logo">
+                <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
+            </a>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
