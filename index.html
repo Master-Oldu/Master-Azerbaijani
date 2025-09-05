@@ -80,15 +80,15 @@ align-items: center;
 
        /* Hamburger Button */
     .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-background: none;
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
             border: none;
             padding: 5px;
-z-index: 10001;
-position: relative;
+            z-index: 10001;
+            position: relative;
 
     }
     .menu-toggle span {
@@ -96,21 +96,20 @@ position: relative;
       height: 3px;
       background: white;
       border-radius: 2px;
-transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
 
 /* Mobile Menu Overlay */
         .menu-overlay {
             display: none;
             position: fixed;
-inset: 0;
+            inset: 0;
             top: 0;
             left: 0;
             width: 100%;
             height: 100&;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 9998;
-            backdrop-filter: blur(5px);
         }
         
         .menu-overlay.show {
@@ -426,47 +425,29 @@ width: 180px; }
         });
     })();
 
-// Mobile menu toggle
-
 const toggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-const overlay = document.getElementById ('menu-overlay');
-    
-    console.log('Toggle element:', toggle); // Debug line
-    console.log('Nav menu element:', navMenu); // Debug line
-console.log('Overlay element:', overlay);
-    
-    if (toggle && navMenu && overlay) {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent any default behavior
-            console.log('Hamburger clicked!'); // Debug line
-            navMenu.classList.toggle('show');
-overlay.classList.toggle('show');
-            console.log('Nav classes after toggle:', navMenu.className); // Debug line
-        });
+const navMenu = document.getElementById('nav-menu');
+const overlay = document.getElementById('menu-overlay');
 
- // Close menu when overlay is clicked
-        overlay.addEventListener('click', () => {
-if (e.target === overlay) {
-            console.log('Overlay clicked - closing menu');
-            navMenu.classList.remove('show');
-            overlay.classList.remove('show');
-}
-        });
+// Toggle menu & overlay
+toggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    overlay.classList.toggle('show');
+});
 
-        // Close menu when a nav link is clicked
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                console.log('Nav link clicked - closing menu');
-                navMenu.classList.remove('show');
-                overlay.classList.remove('show');
-            });
-        });
-    } else {
-        console.log('Could not find toggle or navMenu elements');
-    }
+// Close menu when overlay is clicked
+overlay.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    overlay.classList.remove('show');
+});
 
+// Close menu when a nav link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+});
     </script>
 </body>
 </html>
