@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog - Master Azerbaijani</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,9 +44,7 @@
       max-width: 100%;
     }
 
-    nav {
-      text-align: center;
-    }
+    nav { text-align: center; }
 
     nav a {
       text-decoration: none;
@@ -66,59 +60,67 @@
 
     nav a:hover {
       transform: scale(1.1);
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-      background: rgba(255, 255, 255, 0.12);
+      text-shadow: 0 0 10px rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.12);
     }
 
     nav a.active {
       transform: scale(1.15);
-      color: #ff8c00; /* orange instead of yellow */
+      color: #ff8c00;
       text-shadow:
         1px 1px 0 #cc6600,
         -1px 1px 0 #cc6600,
         1px -1px 0 #cc6600,
         -1px -1px 0 #cc6600,
-        0 0 5px rgba(255, 140, 0, 0.9); /* glow effect */
+        0 0 5px rgba(255, 140, 0, 0.9);
       background: rgba(255, 255, 255, 0.18);
     }
 
-    nav a.active:hover {
-      transform: scale(1.2);
-    }
+    nav a.active:hover { transform: scale(1.2); }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     p {
       font-size: 1.2rem;
       line-height: 1.5;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
-    .post-list {
-      text-align: left;
-      margin-top: 30px;
+    /* Blog posts grid */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
     }
 
-    .post-list ul {
-      list-style: none;
+    .post-card {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .post-list li {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
+    .post-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    .post-list a {
-      color: #ff8c00;
+    .post-card a {
       text-decoration: none;
+      color: #ff8c00;
+      font-weight: 600;
     }
 
-    .post-list a.coming-soon {
+    .post-card a.coming-soon {
       opacity: 0.7;
       pointer-events: none;
       cursor: not-allowed;
@@ -129,79 +131,52 @@
       color: white;
       padding: 20px;
       font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0,0,0,0.2);
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .post-list li {
-        font-size: 1rem;
-      }
+    @media (max-width: 900px) {
+      .post-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .post-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
  
 <div class="container">
-    <!-- NAVIGATION BAR -->
-    <header>
-      <a href="index.html" class="logo">
-        <img src="images/logo-1.png" alt="Master Azerbaijani Logo" />
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="help.html">Help</a>
-        <a href="coming-soon.html">App Coming Soon</a>
-      </nav>
-    </header>
+  <!-- NAVIGATION BAR -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="images/logo-1.png" alt="Master Azerbaijani Logo" />
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help</a>
+      <a href="coming-soon.html">App Coming Soon</a>
+    </nav>
+  </header>
 
-    <h1>Blog</h1>
-    <p>
-      Welcome to the Master Azerbaijani blog! Here, you’ll find posts on
-      language tips, cultural insights, and updates about the platform.
-    </p>
+  <h1>Blog</h1>
+  <p>
+    Welcome to the Master Azerbaijani blog! Here, you’ll find posts on
+    language tips, cultural insights, and updates about the platform.
+  </p>
 
-    <div class="post-list">
-      <ul>
-        <li>
-          <a href="#" class="coming-soon"
-            >5 Fun Ways to Learn Azerbaijani (Coming Soon)</a
-          >
-        </li>
-        <li>
-          <a href="#" class="coming-soon"
-            >Why Learning Your Heritage Language Matters (Coming Soon)</a
-          >
-        </li>
-        <li>
-          <a href="#" class="coming-soon"
-            >Azerbaijani Alphabet Made Easy (Coming Soon)</a
-          >
-        </li>
-        <li>
-          <a href="#" class="coming-soon"
-            >Common Phrases for Everyday Use (Coming Soon)</a
-          >
-        </li>
-        <li>
-          <a href="#" class="coming-soon"
-            >Tips for Practicing Azerbaijani Daily (Coming Soon)</a
-          >
-        </li>
-        <li>
-          <a href="#" class="coming-soon"
-            >5 Common Phrases for Travelers (Coming Soon)</a
-          >
-        </li>
-      </ul>
-    </div>
+  <div class="post-grid">
+    <div class="post-card"><a href="#" class="coming-soon">5 Fun Ways to Learn Azerbaijani (Coming Soon)</a></div>
+    <div class="post-card"><a href="#" class="coming-soon">Why Learning Your Heritage Language Matters (Coming Soon)</a></div>
+    <div class="post-card"><a href="#" class="coming-soon">Azerbaijani Alphabet Made Easy (Coming Soon)</a></div>
+    <div class="post-card"><a href="#" class="coming-soon">Common Phrases for Everyday Use (Coming Soon)</a></div>
+    <div class="post-card"><a href="#" class="coming-soon">Tips for Practicing Azerbaijani Daily (Coming Soon)</a></div>
+    <div class="post-card"><a href="#" class="coming-soon">5 Common Phrases for Travelers (Coming Soon)</a></div>
   </div>
+</div>
 
-  <footer>© 2025 Master Azerbaijani</footer>
+<footer>© 2025 Master Azerbaijani</footer>
 </body>
 </html>
