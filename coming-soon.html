@@ -30,9 +30,21 @@ body {
     flex: 1;
 }
 
+header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 10px 0;
+        }
+        header .logo img {
+            height: 120px;
+            width: auto;
+            max-width: 100%;
+        }
+
 nav {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 nav a {
@@ -53,10 +65,15 @@ nav a:hover {
 }
 
 nav a.active {
-    transform: scale(1.15);
-    color: #ffeb3b;
-    background: rgba(255,255,255,0.18);
-    text-shadow: 0 0 12px rgba(255,235,59,0.9);
+            transform: scale(1.15);
+            color: #ff8c00; /* orange instead of yellow */
+            text-shadow: 
+                    1px 1px 0 #cc6600, 
+                   -1px 1px 0 #cc6600, 
+                   1px -1px 0 #cc6600, 
+                  -1px -1px 0 #cc6600, /* a shade dark orange outline */
+                  0 0 5px rgba(255,140,0,0.9); /* glow effect if you want */
+                  background: rgba(255,255,255,0.18);
 }
 
 nav a.active:hover {
@@ -170,7 +187,7 @@ h1 {
 }
 
 .contact a {
-    color: #ffeb3b;
+    color: #ff8c00;
     text-decoration: none;
     word-break: break-all;
 }
@@ -187,11 +204,17 @@ footer {
     h1 { font-size: 2rem; }
     .subtitle { font-size: 1.2rem; }
 }
+header .logo img { height: 80px; }  /* mobile size */
+        }
 </style>
 </head>
 <body>
 <div class="container">
-    <!-- NAVIGATION BAR -->
+    <!-- HEADER WITH LOGO + NAV -->
+        <header>
+            <a href="index.html" class="logo">
+                <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
+            </a>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -200,6 +223,7 @@ footer {
         <a href="help.html">Help</a>
         <a href="coming-soon.html" class="active">App Coming Soon</a>
     </nav>
+</header>
 
     <div class="flag">🇦🇿</div>
 
