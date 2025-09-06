@@ -80,6 +80,54 @@ nav a.active:hover {
     transform: scale(1.2);
 }
 
+/* Mobile Hamburger */
+.hamburger {
+    display: none;
+    font-size: 2.5rem;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+}
+
+/* Mobile menu overlay */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+    font-weight: 700;
+    padding-top: 100px;
+}
+
+
+.mobile-nav a {
+    display: block;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    transition: background 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+
+
 .flag {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -200,6 +248,28 @@ footer {
     background: rgba(0,0,0,0.2);
 }
 
+ @media (max-width: 900px) {
+            .post-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {font-size: 2rem;}
+            .hero p {font-size: 1.2rem;}
+            .latest-posts h2,
+            .word-of-day h2 {font-size: 2rem;}
+            .post-grid {
+                grid-template-columns: 1fr; /* 1 per row on mobile */
+            }
+        }
+
+@media(max-width:768px) {
+    nav { display: none; }
+    .hamburger { display: block; }
+}
+
+
 @media (max-width: 480px) {
     h1 { font-size: 2rem; }
     .subtitle { font-size: 1.2rem; }
@@ -215,6 +285,9 @@ header .logo img { height: 80px; }  /* mobile size */
             <a href="index.html" class="logo">
                 <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
             </a>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -224,6 +297,16 @@ header .logo img { height: 80px; }  /* mobile size */
         <a href="coming-soon.html" class="active">App Coming Soon</a>
     </nav>
 </header>
+
+ <!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="help.html">Help</a>
+    <a href="coming-soon.html">App Coming Soon</a>
+</div>
 
     <div class="flag">🇦🇿</div>
 
@@ -269,6 +352,14 @@ header .logo img { height: 80px; }  /* mobile size */
 <footer>
     © 2025 Master Azerbaijani
 </footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileNav');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
 
 <script>
 // Countdown Timer Script
