@@ -280,6 +280,7 @@
             <a href="index.html" class="logo">
                 <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
             </a>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -290,7 +291,18 @@
             </nav>
         </header>
 
-        <!-- HERO -->
+       <!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="help.html">Help</a>
+    <a href="coming-soon.html">App Coming Soon</a>
+</div>
+
+
+ <!-- HERO -->
         <div class="hero">
             <h1>Master Azerbaijani</h1>
             <p>Learn Azerbaijani from a diaspora native! Fun, bite-sized lessons for English speakers.</p>
@@ -338,6 +350,13 @@
     <footer>
         © 2025 Master Azerbaijani
     </footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileNav');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
 
     <!-- Auto-highlight current nav item -->
 <script>
