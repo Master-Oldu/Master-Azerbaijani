@@ -31,23 +31,21 @@ body {
 }
 
 header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow for depth */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2000;
-            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%); /* same bg as body */
-            padding: 10px 20px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+    padding: 10px 20px;
+      
+  }
         header .logo img {
             height: 80px;
             width: auto;
@@ -100,7 +98,7 @@ nav a.active:hover {
     right: 20px;
     cursor: pointer;
     color: white;
-    z-index: 1100;
+    z-index: 2100;
 }
 
 /* Mobile menu overlay */
@@ -110,22 +108,20 @@ nav a.active:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: rgba(0,0,0,0.7);
     backdrop-filter: blur(10px);
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 3000;
     font-weight: 700;
-    padding: 100px;
-    border-radius: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-
+    padding: 20px;
 }
+.mobile-nav.open {
+    display: flex;
+}
+
 
 .mobile-nav a {
     display: block;
@@ -236,10 +232,6 @@ footer {
         <a href="coming-soon.html">App Coming Soon</a>
     </nav>
 </header>
-
-
-<div class="container">
- <!-- HEADER WITH LOGO + NAV -->
       
 
 
@@ -252,6 +244,9 @@ footer {
     <a href="help.html">Help</a>
     <a href="coming-soon.html">App Coming Soon</a>
 </div>
+
+<div class="container">
+
 
     <h1>Help & Guidance</h1>
     <p>Welcome! If you’re curious about Master Azerbaijani or want tips on learning your heritage language, you’re in the right place.</p>
@@ -280,8 +275,26 @@ footer {
 <script>
 function toggleMenu() {
     const menu = document.getElementById('mobileNav');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    menu.classList.toggle('open');
 }
+</script>
+
+<!-- Auto-highlight current nav item -->
+<script>
+(function() {
+    var links = document.querySelectorAll('nav a');
+    var current = window.location.pathname.split('/').pop();
+    if (!current || current === '' || current === '/') {
+        current = 'index.html';
+    }
+    links.forEach(function(link) {
+        var href = link.getAttribute('href').split('#')[0].split('?')[0];
+        if (href.endsWith(current)) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+})();
 </script>
 
 </body>
