@@ -20,7 +20,7 @@ body {
     text-align: center;
     max-width: 1200px;
     width: 90%;
-    padding: 40px 20px;
+    padding: 140px 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -35,7 +35,18 @@ header {
             align-items: center;
             justify-content: space-between;
             margin-bottom: 40px;
-            padding: 10px 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow for depth */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2000;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%); /* same bg as body */
+            padding: 10px 20px;
         }
         header .logo img {
             height: 80px;
@@ -107,7 +118,13 @@ nav a.active:hover {
     align-items: center;
     z-index: 1000;
     font-weight: 700;
-    padding-top: 100px;
+    padding: 100px;
+    border-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
 }
 
 .mobile-nav a {
@@ -201,12 +218,13 @@ footer {
 </style>
 </head>
 <body>
-<div class="container">
- <!-- HEADER WITH LOGO + NAV -->
-        <header>
+
+
+  <header>
             <a href="index.html" class="logo">
                 <img src="images/logo-1.png" alt="Master Azerbaijani Logo">
             </a>
+
 <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <nav>
@@ -219,12 +237,18 @@ footer {
     </nav>
 </header>
 
+
+<div class="container">
+ <!-- HEADER WITH LOGO + NAV -->
+      
+
+
  <!-- Mobile nav overlay -->
 <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html">Contact</a>
     <a href="help.html">Help</a>
     <a href="coming-soon.html">App Coming Soon</a>
 </div>
